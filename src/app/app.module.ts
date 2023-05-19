@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookListComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
