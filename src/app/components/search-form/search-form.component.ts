@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'; 
+import { Dropdown, Ripple, initTE } from 'tw-elements';
 
 @Component({ 
     selector: 'app-search-form', 
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./search-form.component.css']
  }) 
  export class SearchFormComponent {
-    constructor() { } 
+    ngOnInit() {
+        initTE({ Dropdown, Ripple });
+    }
 }
