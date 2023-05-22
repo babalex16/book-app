@@ -1,8 +1,8 @@
 <div class='book-item flex align-middle flex-col justify-between'>
-  <div class='book-item-img' *ngIf="dataSource.cover_img !== ''">
+  <div class='book-item-img mx-auto' *ngIf="dataSource.cover_img !== ''">
     <img src = {{dataSource.cover_img}} alt = "cover" />
   </div> 
-  <div class='book-item-img' *ngIf="dataSource.cover_img === ''">
+  <div class='book-item-img mx-auto' *ngIf="dataSource.cover_img === ''">
     <img src = "../../../assets/img/cover_not_found.jpg" alt = "cover" />
   </div>
   <div class='book-item-info text-center'>

@@ -1,10 +1,10 @@
-<section className='booklist'>
-    <div className='container'>
-      <div className='section-title'>
+<section class='booklist'>
+    <div class='container'>
+      <div class='section-title'>
         <h2>Result Title</h2>
       </div>
-      <div className='booklist-content grid'>
-            <app-book-card *ngFor="let book of dataSource | slice:0:30;" [dataSource]="book"></app-book-card>
+      <div class="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
+        <app-book-card *ngFor="let book of dataSource | slice:0:30;" [dataSource]="book"></app-book-card>
       </div>
     </div>
   </section>

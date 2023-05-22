@@ -1,0 +1,25 @@
+<div class='book-details-content grid'>
+    <div class='book-details-img'>
+      <img src = {{dataSource.cover_img}} alt = "cover img" />
+    </div>
+    <div class='book-details-info'>
+      <div class='book-details-item title'>
+        <span class='fw-6 fs-24'>{{dataSource.title}}</span>
+      </div>
+      <div class='book-details-item description'>
+        <span>{{dataSource.description}}</span>
+      </div>
+      <div class='book-details-item'>
+        <span class='fw-6'>Subject Places: </span>
+        <span class='text-italic'>{{dataSource.subject_places}}</span>
+      </div>
+      <div class='book-details-item'>
+        <span class='fw-6'>Subject Times: </span>
+        <span class='text-italic'>{{dataSource.subject_times}}</span>
+      </div>
+      <div class='book-details-item'>
+        <span class='fw-6'>Subjects: </span>
+        <span>{{dataSource.subjects}}</span>
+      </div>
+    </div>
+</div>
