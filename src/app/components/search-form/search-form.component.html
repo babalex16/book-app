@@ -9,7 +9,8 @@
               aria-expanded="false"
               data-te-ripple-init
               data-te-ripple-color="light">
-              Books
+              {{selectedOption}}
+
               <span class="ml-2 w-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -27,17 +28,11 @@
               class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
               aria-labelledby="dropdownMenuButton4"
               data-te-dropdown-menu-ref>
-                <li>
+                <li
+                *ngFor="let option of searchOptions"
+                (click)="selectCategory(option)">
                     <button type="button" class="bg-white text-black inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Title</button>
-                </li>
-                <li>
-                    <button type="button" class="bg-white text-black inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Author</button>
-                </li>
-                <li>
-                    <button type="button" class="bg-white text-black inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Subject</button>
+                        {{option}}</button>
                 </li>
             </ul>
           </div>
@@ -45,6 +40,7 @@
       <!-- Search input -->
       <input
         type="search"
+        value=""
         class="relative mywidth m-0 -mr-0.5 flex-auto rounded-l border border-solid border-neutral-300 bg-white bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
         placeholder="Harry Potter"
         aria-label="Search"
@@ -54,6 +50,7 @@
       <button
         class="relative z-[2] flex items-center rounded-r bg-white px-6 py-2.5 text-xs font-medium uppercase leading-tight text-primary shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
         type="button"
+        (click)="logBooksToConsole()"
         aria-label="search"
         id="button-addon1"
         data-te-ripple-init
