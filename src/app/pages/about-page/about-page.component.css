@@ -1,0 +1,19 @@
+header {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

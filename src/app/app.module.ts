@@ -10,7 +10,6 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { BooksPageComponent } from './pages/books-page/books-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
     SearchFormComponent,
     BooksPageComponent,
     AboutPageComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
