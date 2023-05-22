@@ -29,11 +29,12 @@ export class SearchFormComponent {
         const booksObservable = this.appContextService.fetchData(this.selectedOption, this.searchText);
         booksObservable.subscribe((books) => {
             this.dataSource = books.docs.map((singleBook : any) => {
+                console.log(`https://covers.openlibrary.org/b/id/${singleBook.cover_i}-L.jpg`)
                 return {
                   ...singleBook,
                   // removing /works/ to get only id
                   id: singleBook.key.replace("/works/", ""),
-                  cover_img:  `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg`
+                  cover_img: singleBook.cover_i ? `https://covers.openlibrary.org/b/id/${singleBook.cover_i}-L.jpg` : ""
                 }
               });
         });
