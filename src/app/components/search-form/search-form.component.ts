@@ -12,11 +12,13 @@ export class SearchFormComponent {
     searchText: string;
     searchOptions: string[];
     selectedOption: string;
+    dataSource: any;
 
     constructor(private appContextService: AppContextService) {
         this.searchText = ""
-        this.searchOptions = ["Title", "Author", "Subject"]
+        this.searchOptions = ["title", "author", "subject"]
         this.selectedOption = this.searchOptions[0]
+        this.dataSource = []
     }
 
     ngOnInit() {
@@ -24,13 +26,25 @@ export class SearchFormComponent {
     }
 
     logBooksToConsole() {
-        const booksObservable = this.appContextService.fetchBooks('Harry Potter');
-        booksObservable.subscribe((data) => {
-            console.log(data);
+        const booksObservable = this.appContextService.fetchData(this.selectedOption, this.searchText);
+        booksObservable.subscribe((books) => {
+            this.dataSource = books.docs.map((singleBook : any) => {
+                return {
+                  ...singleBook,
+                  // removing /works/ to get only id
+                  id: singleBook.key.replace("/works/", ""),
+                  cover_img:  `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg`
+                }
+              });
         });
     }
 
     selectCategory( value: string){
         this.selectedOption = value;
+    }
+
+    readInput(event: any ){
+        this.searchText = event.target.value
+        console.log(this.searchText)
     }
 }

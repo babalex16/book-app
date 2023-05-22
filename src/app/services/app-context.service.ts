@@ -7,16 +7,14 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AppContextService {
-  private static readonly URL = 'http://openlibrary.org/search.json?title=';
+  private static readonly URL = 'http://openlibrary.org/search.json?';
 
 
   constructor(private http: HttpClient) { }
 
-  fetchBooks(searchTerm: string): Observable<any> {
-    return this.http.get(`${AppContextService.URL}${searchTerm}`)
+  fetchData(searchOption: string, value: string): Observable<any> {
+    const replacedStr = value.replace(/ /g, '+').toLowerCase();
+    console.log(`${AppContextService.URL}${searchOption}=${replacedStr}`)
+    return this.http.get(`${AppContextService.URL}${searchOption}=${replacedStr}`)
   }
-
-  // setSearchTerm(term: string): void {
-  //   this.searchTermSubject.next(term);
-  // }
 }
