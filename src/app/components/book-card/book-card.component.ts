@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-card',
@@ -8,4 +9,10 @@ import { Component, Input } from '@angular/core';
 
 export class BookCardComponent {
     @Input() dataSource: any;
+
+    constructor(private router: Router) { }
+
+  navigateToBookPage(dataSource: any) {
+    this.router.navigate(['book', dataSource.id], { state: { data: dataSource } });
+  }
 }

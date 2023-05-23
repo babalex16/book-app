@@ -1,25 +1,32 @@
-<div class='book-details-content grid'>
-    <div class='book-details-img'>
-      <img src = {{dataSource.cover_img}} alt = "cover img" />
+<div class="book-info-container mt-16 lg:mx-24 md:mx-10 sm:pl-10">
+    <div class="book-cover lg:pr-6 myclass">
+      <img src="{{dataSource.cover_img}}" alt="cover img" />
     </div>
-    <div class='book-details-info'>
-      <div class='book-details-item title'>
-        <span class='fw-6 fs-24'>{{dataSource.title}}</span>
+    <div class="book-details">
+      <div class="detail-row">
+        <span class="detail-label">Title:</span>
+        <span class="detail-value">{{dataSource.title}}</span>
       </div>
-      <div class='book-details-item description'>
-        <span>{{dataSource.description}}</span>
+      <div class="detail-row">
+        <span class="detail-label">Author Name:</span>
+        <span class="detail-value">{{dataSource.author_name}}</span>
       </div>
-      <div class='book-details-item'>
-        <span class='fw-6'>Subject Places: </span>
-        <span class='text-italic'>{{dataSource.subject_places}}</span>
+      <div class="detail-row">
+        <span class="detail-label">Place:</span>
+        <span class="detail-value">{{dataSource.place}}</span>
       </div>
-      <div class='book-details-item'>
-        <span class='fw-6'>Subject Times: </span>
-        <span class='text-italic'>{{dataSource.subject_times}}</span>
+      <div class="detail-row">
+        <span class="detail-label">Time period:</span>
+        <span class="detail-value">{{dataSource.time}}</span>
       </div>
-      <div class='book-details-item'>
-        <span class='fw-6'>Subjects: </span>
-        <span>{{dataSource.subjects}}</span>
+      <div class="detail-row">
+        <span class="detail-label">First published year:</span>
+        <span class="detail-value">{{dataSource.first_publish_year}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Subjects:</span>
+        <span class="detail-value">{{dataSource.subject}}</span>
       </div>
     </div>
-</div>
+  </div>
+  

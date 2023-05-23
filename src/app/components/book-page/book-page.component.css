@@ -1,0 +1,51 @@
+/* Overall page styles */
+body {
+    margin: 10px;
+  }
+  
+  /* Book info container styles */
+  .book-info-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .book-cover {
+    margin-right: 20px;
+    flex: 0 0 auto;
+  }
+  
+  .book-cover img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .book-details {
+    flex: 1 1 300px;
+    font-size: 16px;
+  }
+  
+  .detail-row {
+    margin-bottom: 10px;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+  }
+  
+  .detail-value {
+    margin-left: 10px;
+  }
+  
+  /* Page indentation styles */
+  @media (max-width: 768px) {
+    body {
+      margin: 10px;
+    }
+  }
+  @media (min-width: 640px) {
+    .myclass {
+        padding-left: auto;
+        padding-right: auto;
+    }
+}
+  
