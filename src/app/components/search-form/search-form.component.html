@@ -1,0 +1,83 @@
+<div class="bg-cover bg-center background" style="background-image: url('../../../assets/img/library-background.jpg');">
+  <div class="flex flex-col justify-center items-center h-full bg-opacity-50 w-full" >
+    <h1 class="text-4xl font-bold text-white text-center mb-20">Search for your book:</h1>
+    <div class="relative mb-6 flex align-middle">
+      <!-- Dropdown button -->
+      <div class="relative" data-te-dropdown-ref>
+          <button
+            class="flex items-center whitespace-nowrap rounded bg-white px-4 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200 motion-reduce:transition-none"
+            type="button"
+            id="dropdownMenuButton4"
+            data-te-dropdown-toggle-ref
+            aria-expanded="false"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            {{selectedOption}}
+
+            <span class="ml-2 w-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </button>
+          <ul
+            class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+            aria-labelledby="dropdownMenuButton4"
+            data-te-dropdown-menu-ref>
+              <li
+              *ngFor="let option of searchOptions"
+              (click)="selectCategory(option)">
+                  <button type="button" class="bg-white text-black inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      {{option}}</button>
+              </li>
+          </ul>
+        </div>
+    
+    <!-- Search input -->
+    <input
+      type="search"
+      value=""
+      (change)="readInput($event)"
+      class="relative mywidth m-0 -mr-0.5 flex-auto rounded-l border border-solid border-neutral-300 bg-white bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+      placeholder="Harry Potter"
+      aria-label="Search"
+      aria-describedby="button-addon1" />
+
+    <!--Search button-->
+    <button
+      class="relative z-[2] flex items-center rounded-r bg-white px-6 py-2.5 text-xs font-medium uppercase leading-tight text-primary shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+      type="button"
+      (click)="logBooksToConsole()"
+      aria-label="search"
+      id="button-addon1"
+      data-te-ripple-init
+      data-te-ripple-color="light">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="h-5 w-5">
+        <path
+          fill-rule="evenodd"
+          d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  </div>
+</div>
+
+<div class="container mx-auto ">
+  <app-book-list *ngIf="!!dataSource.length"  [dataSource]="dataSource">
+  </app-book-list>
+</div>
+    
+  

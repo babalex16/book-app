@@ -1,0 +1,19 @@
+  <div class='book-item flex align-middle flex-col justify-between'
+       (click)="navigateToBookPage(dataSource)">
+    <div class='book-item-img mx-auto' *ngIf="dataSource.cover_img !== ''">
+      <img src = {{dataSource.cover_img}} alt = "cover" />
+    </div> 
+    <div class='book-item-img mx-auto' *ngIf="dataSource.cover_img === ''">
+      <img src = "../../../assets/img/cover_not_found.jpg" alt = "cover" />
+    </div>
+    
+    <div class='book-item-info text-center'>
+        <div class='book-item-info-item title font-bold text-lg'>
+          <span>{{dataSource.title}}</span>
+        </div>
+      <div class='book-item-info-item author text-base'>
+        <span class='capitalize font-bold'>Author: </span>
+        <span>{{dataSource.author_name.join(", ")}}</span>
+      </div>
+    </div>
+  </div>

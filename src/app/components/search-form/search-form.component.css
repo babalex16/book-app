@@ -1,0 +1,19 @@
+.mywidth{
+    width: 500px;
+}
+
+@media (max-width: 768px) {
+    .mywidth {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mywidth {
+        width: 240px;
+    }
+}
+
+.background {
+    height: 60vh;
+}
